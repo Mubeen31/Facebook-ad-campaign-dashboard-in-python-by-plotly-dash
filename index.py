@@ -56,7 +56,7 @@ dcc.Graph(id = 'line_chart5',
 dcc.Graph(id = 'line_chart6',
                       config = {'displayModeBar': False}, className = 'grid_height'),
 
-                ], className = 'adjust_drop_down_lists1'),
+                ], className = 'adjust_grids'),
 
 
         ], className = "create_container2 four columns"),

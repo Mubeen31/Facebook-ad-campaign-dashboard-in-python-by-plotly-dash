@@ -580,6 +580,10 @@ there.
     gap: 0px !important;
 }
 
+.adjust_grids {
+   width: 410px !important;
+}
+
   .create_container2 {
     margin: 0 !important;
     margin-bottom: 10px !important;

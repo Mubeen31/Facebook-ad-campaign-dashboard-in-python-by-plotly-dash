@@ -1,6 +1,6 @@
 
 body {
-  background-color: #e0e0e0;
+  background-color: #000000;
   margin: 5%;
 }
 
@@ -13,7 +13,7 @@ body {
 .title_container_width {
    width: 99.5%;
    margin-left: 4px;
-   background-color: #006fe6;
+   background-color: #273746;
 }
 
 .title_text {
@@ -22,22 +22,20 @@ body {
 
 .create_container2 {
   align-items: center;
-  background-color: #F2F2F2;
+  background-color: #273746;
   margin-top: 20px;
   margin-left: 3px;
   padding: 15px;
   position: relative;
-  box-shadow: 2px 2px 2px 2px lightgrey;
 }
 
 .create_container3 {
   align-items: center;
-  background-color: #F2F2F2;
+  background-color: #273746;
   margin-top: 20px;
   margin-left: 10px;
   padding: 15px;
   position: relative;
-  box-shadow: 2px 2px 2px 2px lightgrey;
 }
 
 .adjust_title {
@@ -53,7 +51,7 @@ body {
     gap: 10px;
 }
 
-.adjust_drop_down_lists1 {
+.adjust_grids {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -62,36 +60,11 @@ body {
 
 .grid_height {
     height: 200px;
-    box-shadow: 2px 2px 2px 2px lightgrey;
 }
 
-
-.adjust_inline {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   gap: 5px;
-   margin-top: 10px;
-}
-
-.dcc_compon1 {
-  color: black;
-  padding: 5px;
-  width: 100%;
-}
 .dcc_compon {
   color: black;
-  margin: 0 auto;
-  padding: 5px;
-  width: calc(100%-40px);
-}
-
-.fix_label {
-  font-size: 15px;
-  margin: 0;
-  padding: 10px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  width: calc(100%-40px);
+  width: 100%;
 }
 
 .container-display {
