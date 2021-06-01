@@ -11,7 +11,7 @@ body {
 }
 
 .title_container_width {
-   width: 99.5%;
+   width: 99.73%;
    margin-left: 4px;
    background-color: #273746;
 }
@@ -63,8 +63,9 @@ body {
 }
 
 .dcc_compon {
-  color: black;
-  width: 100%;
+  width: 50%;
+  margin-top: 5px;
+  margin-left: 413px;
 }
 
 .container-display {
@@ -80,6 +81,22 @@ body {
   flex-direction: column;
 }
 
+/* Drop down list */
+.Select-control, .Select-menu-outer, .Select-multi-value-wrapper, .select-up, .is-open .Select-control {
+  background-color: #000000;
+  color: white;
+
+}
+
+.Select-control{
+  border: 0.5px solid green;
+}
+
+.has-value.Select--single>.Select-control .Select-value .Select-value-label, .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
+  color: white;
+}
+/* Drop down list */
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px !important;
@@ -88,16 +105,16 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #F2F2F2 !important;
+  background: #000000 !important;
   display: block !important;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #9A38D5;
+  background: #273746;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #38D56F !important;
+  background: white !important;
 }

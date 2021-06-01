@@ -576,6 +576,13 @@ there.
    margin-left: 10px !important;
 }
 
+.dcc_compon {
+  width: 98% !important;
+  margin-top: 17px !important;
+  margin-left: 0px !important;
+  margin-left: -10px !important;
+}
+
 .adjust_drop_down_lists {
     gap: 0px !important;
 }
@@ -584,15 +591,15 @@ there.
    width: 410px !important;
 }
 
-  .create_container2 {
-    margin: 0 !important;
-    margin-bottom: 10px !important;
-  }
+.create_container2 {
+   margin: 0 !important;
+   margin-bottom: 10px !important;
+ }
 
-  .create_container3 {
+.create_container3 {
     margin: 0 !important;
     margin-left: 0px !important;
-  }
+}
 
   .container-display {
     display: flex;
@@ -617,8 +624,5 @@ there.
 }
 
 /* Larger than Desktop HD */
-@media (min-width: 1280px) {
-.title_container {
-   margin-right: 5px !important;
-}
+@media (min-width: 1200px) {
 }

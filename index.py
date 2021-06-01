@@ -24,46 +24,44 @@ app.layout = html.Div([
             html.Div([
 
                 html.Div([
-                html.H5('World Countries Information', className = 'title_text'),
-
-dcc.Dropdown(id = 'select_date',
-                         multi = False,
-                         clearable = True,
-                         disabled = False,
-                         style = {'display': True},
-                         value = '19/08/2017-19/08/2017',
-                         placeholder = 'Select Date',
-                         options = [{'label': c, 'value': c}
-                                    for c in data1['campaign date'].unique()], className = 'dcc_compon1'),
-        ], className = 'adjust_drop_down_lists'),
+                    html.H5('World Countries Information', className = 'title_text'),
+                    dcc.Dropdown(id = 'select_date',
+                                 multi = False,
+                                 clearable = True,
+                                 disabled = False,
+                                 style = {'display': True},
+                                 value = '19/08/2017-19/08/2017',
+                                 placeholder = 'Select Date',
+                                 options = [{'label': c, 'value': c}
+                                            for c in data1['campaign date'].unique()], className = 'dcc_compon'),
+                ], className = 'adjust_drop_down_lists'),
             ], className = "title_container_width")
         ], className = "title_container twelve columns")
     ], className = "row flex-display"),
 
     html.Div([
         html.Div([
-               html.Div([
-dcc.Graph(id = 'line_chart1',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
-dcc.Graph(id = 'line_chart2',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
-dcc.Graph(id = 'line_chart3',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
-dcc.Graph(id = 'line_chart4',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
-dcc.Graph(id = 'line_chart5',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
-dcc.Graph(id = 'line_chart6',
-                      config = {'displayModeBar': False}, className = 'grid_height'),
+            html.Div([
+                dcc.Graph(id = 'line_chart1',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
+                dcc.Graph(id = 'line_chart2',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
+                dcc.Graph(id = 'line_chart3',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
+                dcc.Graph(id = 'line_chart4',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
+                dcc.Graph(id = 'line_chart5',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
+                dcc.Graph(id = 'line_chart6',
+                          config = {'displayModeBar': False}, className = 'grid_height'),
 
-                ], className = 'adjust_grids'),
-
+            ], className = 'adjust_grids'),
 
         ], className = "create_container2 four columns"),
 
-html.Div([
+        html.Div([
 
-dcc.Graph(id = 'line_chart7',
+            dcc.Graph(id = 'line_chart7',
                       config = {'displayModeBar': 'hover'}),
 
         ], className = "create_container3 eight columns")
