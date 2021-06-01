@@ -170,15 +170,15 @@ def update_graph(select_date):
                 y = data2['impressions'],
                 mode = 'lines',
                 fill = 'tozeroy',
-                line = dict(width = 2, color = '#9e009e'),
+                line = dict(width = 2, color = '#FFA07A'),
                 hoverinfo = 'skip',
             )],
 
 
         'layout': go.Layout(
-             font = dict(color = '#00009e'),
-             plot_bgcolor='#ffccff',
-             paper_bgcolor='#ffccff',
+             font = dict(color = '#e55467'),
+             plot_bgcolor='#ffede6',
+             paper_bgcolor='#ffede6',
              margin = dict(l = 0, r = 0, t = 0, b = 0),
 
              xaxis = dict(title = '<b>Years</b>',
@@ -314,15 +314,15 @@ def update_graph(select_date):
                 y = data2['interest'],
                 mode = 'lines',
                 fill = 'tozeroy',
-                line = dict(width = 2, color = '#38D56F'),
+                line = dict(width = 2, color = '#38D5CB'),
                 hoverinfo = 'skip',
             )],
 
 
         'layout': go.Layout(
              font = dict(color = '#e55467'),
-             plot_bgcolor='#d5f6e1',
-             paper_bgcolor='#d5f6e1',
+             plot_bgcolor='#c0f2ee',
+             paper_bgcolor='#c0f2ee',
              margin = dict(l = 0, r = 0, t = 0, b = 0),
 
              xaxis = dict(title = '<b>Years</b>',
@@ -386,15 +386,15 @@ def update_graph(select_date):
                 y = data2['approved_conversion'],
                 mode = 'lines',
                 fill = 'tozeroy',
-                line = dict(width = 2, color = '#38D56F'),
+                line = dict(width = 2, color = '#CCCCFF'),
                 hoverinfo = 'skip',
             )],
 
 
         'layout': go.Layout(
              font = dict(color = '#e55467'),
-             plot_bgcolor='#d5f6e1',
-             paper_bgcolor='#d5f6e1',
+             plot_bgcolor='#e6e6ff',
+             paper_bgcolor='#e6e6ff',
              margin = dict(l = 0, r = 0, t = 0, b = 0),
 
              xaxis = dict(title = '<b>Years</b>',
@@ -458,15 +458,15 @@ def update_graph(select_date):
                 y = data2['total_conversion'],
                 mode = 'lines',
                 fill = 'tozeroy',
-                line = dict(width = 2, color = '#38D56F'),
+                line = dict(width = 2, color = '#808080'),
                 hoverinfo = 'skip',
             )],
 
 
         'layout': go.Layout(
              font = dict(color = '#e55467'),
-             plot_bgcolor='#d5f6e1',
-             paper_bgcolor='#d5f6e1',
+             plot_bgcolor='#e6e6e6',
+             paper_bgcolor='#e6e6e6',
              margin = dict(l = 0, r = 0, t = 0, b = 0),
 
              xaxis = dict(title = '<b>Years</b>',
