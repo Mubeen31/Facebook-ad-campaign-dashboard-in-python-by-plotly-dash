@@ -4,7 +4,6 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
-import dash_table as dt
 import pathlib
 
 
