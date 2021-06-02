@@ -11,7 +11,7 @@ body {
 }
 
 .title_container_width {
-   width: 99.73%;
+   width: 100.1%;
    margin-left: 4px;
    background-color: #273746;
 }
@@ -38,17 +38,11 @@ body {
   position: relative;
 }
 
-.adjust_title {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 1px;
-}
-
 .adjust_drop_down_lists {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-right: 190px;
 }
 
 .adjust_grids {
@@ -56,6 +50,10 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     height: 30%;
+}
+
+.line_chart_height {
+   height: 600px;
 }
 
 .grid_height {

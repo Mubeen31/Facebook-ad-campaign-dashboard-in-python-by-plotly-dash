@@ -569,27 +569,26 @@ there.
 }
 
   .title_container {
-   margin-bottom: 10px  !important;
+   margin-bottom: 10px !important;
 }
-
 .title_text {
    margin-left: 10px !important;
 }
 
 .dcc_compon {
-  width: 98% !important;
+  width: 180% !important;
   margin-top: 17px !important;
-  margin-left: 0px !important;
-  margin-left: -10px !important;
+  margin-left: 70px !important;
+}
+
+.adjust_grids {
+   width: 410px !important;
 }
 
 .adjust_drop_down_lists {
     gap: 0px !important;
 }
 
-.adjust_grids {
-   width: 410px !important;
-}
 
 .create_container2 {
    margin: 0 !important;

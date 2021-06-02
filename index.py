@@ -24,7 +24,9 @@ app.layout = html.Div([
             html.Div([
 
                 html.Div([
-                    html.H5('World Countries Information', className = 'title_text'),
+                    html.Div([
+                    html.H5('Facebook Ad Campaign', className = 'title_text'),
+                        ], className = 'adjust_title'),
                     dcc.Dropdown(id = 'select_date',
                                  multi = False,
                                  clearable = True,
@@ -60,9 +62,8 @@ app.layout = html.Div([
         ], className = "create_container2 four columns"),
 
         html.Div([
-
-            dcc.Graph(id = 'line_chart7',
-                      config = {'displayModeBar': 'hover'}),
+               dcc.Graph(id = 'line_chart',
+                         config = {'displayModeBar': False}, className = 'line_chart_height'),
 
         ], className = "create_container3 eight columns")
 
@@ -87,7 +88,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['clicks']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Clicks'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -159,7 +160,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['impressions']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Impressions'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -231,7 +232,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['spent']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Spent'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -303,7 +304,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['interest']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Interest'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -375,7 +376,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['approved_conversion']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Approved Conversion'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -447,7 +448,7 @@ def update_graph(select_date):
                 mode = 'number+delta',
                 value = int(data3['total_conversion']),
                 delta = {'reference': int(data3['previous day']),
-                         'valueformat': ',.0f'},
+                         'relative': True},
                 title = {'text': 'Total Conversion'},
                 domain = {'y': [0, 1], 'x': [0.25, 0.75]}),
 
@@ -502,6 +503,148 @@ def update_graph(select_date):
         )
 
     }
+
+@app.callback(Output('line_chart', 'figure'),
+              [Input('select_date', 'value')])
+
+def update_graph(select_date):
+    data2 = data1.groupby(['reporting_start'])[['clicks', 'impressions', 'spent', 'interest', 'approved_conversion', 'total_conversion']].sum().reset_index()
+    data2.fillna(0, inplace = True)
+
+    return {
+        'data':[
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['clicks'],
+                name = 'Clicks',
+                mode = 'lines',
+                line = dict(width = 2, color = '#38D56F'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Clicks</b>: ' + [f'{x:,.0f}' for x in data2['clicks']] + '<br>'
+            ),
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['impressions'],
+                name = 'Impressions',
+                mode = 'lines',
+                line = dict(width = 2, color = '#FFA07A'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Impressions</b>: ' + [f'{x:,.0f}' for x in data2['impressions']] + '<br>'
+            ),
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['spent'],
+                name = 'Spent',
+                mode = 'lines',
+                line = dict(width = 2, color = '#9e7700'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Spent</b>: ' + [f'{x:,.0f}' for x in data2['spent']] + '<br>'
+            ),
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['interest'],
+                name = 'Interest',
+                mode = 'lines',
+                line = dict(width = 2, color = '#38D5CB'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Interest</b>: ' + [f'{x:,.0f}' for x in data2['interest']] + '<br>'
+            ),
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['approved_conversion'],
+                name = 'Approved Conversion',
+                mode = 'lines',
+                line = dict(width = 2, color = '#CCCCFF'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Approved Conversion</b>: ' + [f'{x:,.0f}' for x in data2['approved_conversion']] + '<br>'
+            ),
+            go.Scatter(
+                x = data2['reporting_start'],
+                y = data2['total_conversion'],
+                name = 'Total Conversion',
+                mode = 'lines',
+                line = dict(width = 2, color = '#808080'),
+                hoverinfo = 'text',
+                hovertext =
+                '<b>Date</b>: ' + data2['reporting_start'].astype(str) + '<br>' +
+                '<b>Total Conversion</b>: ' + [f'{x:,.0f}' for x in data2['total_conversion']] + '<br>'
+            )],
+
+
+        'layout': go.Layout(
+            title = {
+                'text': 'Ad campaign by date',
+
+                'y': 0.99,
+                'x': 0.5,
+                'xanchor': 'center',
+                'yanchor': 'top'},
+             plot_bgcolor='#273746',
+             paper_bgcolor='#273746',
+             margin = dict(l = 30, r = 30, t = 25, b = 25),
+
+             xaxis = dict(title = '<b></b>',
+                          visible = True,
+                          color = 'white',
+                          showline = True,
+                          showgrid = False,
+                          showticklabels = True,
+                          linecolor = 'white',
+                          linewidth = 1,
+                          ticks = 'outside',
+                          tickfont = dict(
+                             family = 'Arial',
+                             size = 12,
+                             color = 'white')
+
+                         ),
+
+             yaxis = dict(title = '<b></b>',
+                          visible = False,
+                          color = 'black',
+                          showline = False,
+                          showgrid = False,
+                          showticklabels = False,
+                          linecolor = 'black',
+                          linewidth = 1,
+                          ticks = '',
+                          tickfont = dict(
+                             family = 'Arial',
+                             size = 12,
+                             color = 'black')
+
+                         ),
+
+            legend = {
+                'orientation': 'h',
+                'bgcolor': '#273746',
+                'x': 0.5,
+                'y': -0.1,
+                'xanchor': 'center',
+                'yanchor': 'top'},
+
+            font = dict(
+                family = "sans-serif",
+                size = 15,
+                color = 'white'),
+
+        )
+
+    }
+
+
+
+
 
 
 if __name__ == '__main__':
